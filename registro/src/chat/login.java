@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import usuario.Usuario;
-
+//checar linea 97
 public class login extends JFrame {
 
     private JButton conectar;
@@ -29,12 +29,11 @@ public class login extends JFrame {
     conectar cc=new conectar();
     Connection cn = cc.conexion();
     registro reg = new registro();
+    
+    Estilos_btn estilos = new Estilos_btn();
 
     public login() {
         inicio();
-        //Username.setText("H3lltronik");
-        //contra.setText("123");
-        //acceder();
     }
 
     private JFrame getFrame() {
@@ -91,10 +90,11 @@ public class login extends JFrame {
     private void inicio() {
         //ventana principal
         setTitle("Inicio de sesión");
-        setSize(500, 450);
+        setSize(450, 400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setLayout(null);
+        // add.(new JLabel (new ImageIcon("")));
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
 
@@ -108,6 +108,7 @@ public class login extends JFrame {
         //setBounds(x,y,ancho,alto)
         this.Username.setBounds(100, 100, 300, 50);
         this.add(Username);
+        
         Username.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -134,9 +135,12 @@ public class login extends JFrame {
 
         //boton Registrar
         conectar = new JButton("Registrarse");
+        
         //setBounds(x,y,ancho,alto)
         conectar.setBounds(100, 300, 120, 50);
+        estilos.dandoEstilos(conectar);
         this.add(conectar);
+        
         conectar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -163,6 +167,7 @@ public class login extends JFrame {
         conectar = new JButton("Iniciar sesión");
         conectar.setBounds(280, 300, 120, 50);
         this.add(conectar);
+        estilos.dandoEstilos(conectar);
         conectar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
