@@ -66,7 +66,6 @@ public class ChatClient {
 
         if (login(loginData, passwordData)) {
             System.out.println("Login OK");
-            //client.msg("esau", "Joto");
         } else {
             System.out.println("Error login");
         }
