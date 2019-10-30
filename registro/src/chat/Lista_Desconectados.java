@@ -20,6 +20,8 @@ public class Lista_Desconectados extends JPanel {
     private Usuario usr;
     private Ventana_Chat vChat;
     
+    Estilos_btn estilo = new Estilos_btn();
+    
     /*public Lista_Desconectados(){
         inicio();   
     };*/
@@ -55,6 +57,7 @@ public class Lista_Desconectados extends JPanel {
                 
                 boton = new JButton("Opciones");
                 boton.setBounds(60, y, 100, 20);
+                estilo.dandoEstilos(boton);
                 
                 menu = new JPopupMenu();
                 menu.add(new MenuDesplegable("Enviar mensaje", (new Usuario(nombre, idUsuario)), this.usr , vChat));

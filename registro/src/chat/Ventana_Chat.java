@@ -6,6 +6,7 @@ import cliente.UserStatusListener;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,6 +28,7 @@ public class Ventana_Chat extends JFrame {
     private JButton enviar;
     private JTextArea cajaMensajes;
     private ChatClient client;
+    Estilos_btn estilos = new Estilos_btn();
     
     public JTextField getTextInput() {
         return textInput;
@@ -73,6 +75,7 @@ public class Ventana_Chat extends JFrame {
         setLayout(null);
         setSize(750,750);
         setResizable(false);
+        getContentPane().setBackground(Color.white);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
 
@@ -115,13 +118,14 @@ public class Ventana_Chat extends JFrame {
         JTextField input = new JTextField();
         input.setBounds(25, 690, 590, 27);
         textInput = input;
-        
+        estilos.dandoEstiloTxtField(input);
         return textInput;
     }
     
     private JButton buttonAddText() {
         JButton testbutton = new JButton("Enviar");
         testbutton.setBounds(615, 690, 100, 25);
+        estilos.dandoEstilos(testbutton);
 
         testbutton.addActionListener(new ActionListener() {
             @Override

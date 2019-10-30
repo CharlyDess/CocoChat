@@ -1,12 +1,15 @@
 package chat;
 
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
@@ -89,26 +92,27 @@ public class login extends JFrame {
 
     private void inicio() {
         //ventana principal
-        setTitle("Inicio de sesión");
-        setSize(450, 400);
+        setTitle("bienvenide");
+        setSize(400, 400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setLayout(null);
-        // add.(new JLabel (new ImageIcon("")));
+        getContentPane().setBackground(Color.white);
+        
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
 
         //Username
         Usr = new JLabel();
         Usr.setText("Username");
-        Usr.setBounds(100, 50, 100, 80);
+        Usr.setBounds(50, 3, 100, 80);
         this.add(Usr);
 
         Username = new JTextField();
         //setBounds(x,y,ancho,alto)
-        this.Username.setBounds(100, 100, 300, 50);
+        this.Username.setBounds(50, 50, 300, 50);
         this.add(Username);
-        
+        Username.setFont(new Font("Arial", Font.BOLD, 10));
         Username.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -119,12 +123,12 @@ public class login extends JFrame {
         //Contraseña
         Cont = new JLabel();
         Cont.setText("Contraseña");
-        Cont.setBounds(100, 150, 100, 80);
+        Cont.setBounds(50, 100, 100, 80);
         this.add(Cont);
 
         contra = new JPasswordField();
         //setBounds(x,y,ancho,alto)
-        this.contra.setBounds(100, 200, 300, 50);
+        this.contra.setBounds(50, 150, 300, 50);
         this.add(contra);
         contra.addActionListener(new ActionListener() {
             @Override
@@ -137,7 +141,7 @@ public class login extends JFrame {
         conectar = new JButton("Registrarse");
         
         //setBounds(x,y,ancho,alto)
-        conectar.setBounds(100, 300, 120, 50);
+        conectar.setBounds(50, 250, 120, 50);
         estilos.dandoEstilos(conectar);
         this.add(conectar);
         
@@ -165,7 +169,7 @@ public class login extends JFrame {
 
         //boton Iniciar sesión 
         conectar = new JButton("Iniciar sesión");
-        conectar.setBounds(280, 300, 120, 50);
+        conectar.setBounds(200, 250, 120, 50);
         this.add(conectar);
         estilos.dandoEstilos(conectar);
         conectar.addActionListener(new ActionListener() {

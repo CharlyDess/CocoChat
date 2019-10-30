@@ -33,4 +33,14 @@ public class Estilos_btn extends JFrame {
         objeto.setContentAreaFilled(false);
         objeto.setFont (new Font ("Arial", Font.BOLD, 10));
     }
+    
+    public void dandoEstiloTxtField(JTextField objeto)
+    {
+        objeto.setFont(new Font("Arial", Font.BOLD, 10));
+    }
+    
+    public void dandoEstilosFrame(JFrame objeto)
+    {
+        getContentPane().setBackground(Color.white);
+    }
 }

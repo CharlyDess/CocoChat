@@ -28,6 +28,8 @@ public class Lista_Grupos extends JPanel {
     Connection cn = cc.conexion();
     private final Usuario usuarioActual;
     private final Ventana_Chat vChat;
+    
+    Estilos_btn estilo = new Estilos_btn();
 
     
     public Lista_Grupos(Usuario usuarioActual, Ventana_Chat vChat) {
@@ -45,6 +47,7 @@ public class Lista_Grupos extends JPanel {
         
         añadirGrupo = new JButton("Crear grupo");
         añadirGrupo.setBounds(20, 500, 130, 20);
+        estilo.dandoEstilos(añadirGrupo);
         añadirGrupo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -83,6 +86,7 @@ public class Lista_Grupos extends JPanel {
                 grupo.setBounds(10, y += 20, 50, 20);
                 boton = new JButton("Opciones");
                 boton.setBounds(60, y, 100, 20);
+                estilo.dandoEstilos(boton);
                 
                 menu = new JPopupMenu();
                 menu.add(new MenuDesplegable("Enviar mensaje al grupo", (new Usuario(nombre, 0)), this.usuarioActual , vChat));
